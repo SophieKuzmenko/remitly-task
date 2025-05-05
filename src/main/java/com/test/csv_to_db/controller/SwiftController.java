@@ -1,6 +1,7 @@
 package com.test.csv_to_db.controller;
 
 import com.test.csv_to_db.dto.CountrySwiftDTO;
+import com.test.csv_to_db.dto.DeleteSwiftDTO;
 import com.test.csv_to_db.dto.SwiftDTO;
 import com.test.csv_to_db.service.SwiftService;
 import org.springframework.batch.core.*;
@@ -53,9 +54,10 @@ public class SwiftController {
     }
 
     @DeleteMapping("/{swiftCode}")
-    public ResponseEntity<String> deleteSwift(@PathVariable String swiftCode) {
+    public ResponseEntity<DeleteSwiftDTO> deleteSwift(@PathVariable String swiftCode) {
         swiftService.deleteSwiftByCode(swiftCode);
-        return ResponseEntity.ok(String.format("Swift code %s successfully deleted", swiftCode));
+        var deleteSwiftDTO = new DeleteSwiftDTO(String.format("Swift code %s successfully deleted", swiftCode));
+        return ResponseEntity.ok(deleteSwiftDTO);
     }
 
 }
