@@ -7,7 +7,7 @@ Response structure: <br>
    "BatchStatus";<br>
 }<br>
 - is a part of initialization process<br>
-- dedicated to uploading the Swift codes into the database from the Swift.tsv file<br>
+- is dedicated to uploading the Swift codes into the database from the Swift.tsv file<br>
 
 
 
